@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakshya</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+  
+  </style>
+<body>
+    
+    <header class = "header">  
+    <nav>
+            <div class="nav-container">
+                <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                 <a href="./index.html" class="logo"> <img src="./images/logo.png"  height="60"> </a>
+                </div>
+            <div class="links">
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="./index.html">Home</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">About</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#background">Background</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#projects">Projects</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#research">Research</a></div>
+                    <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#contact">Contact Me</a></div>
+            </div>
+                <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+            </div>
+            <div class="dropdown">
+                <div class="links">
+                    <a href="./index.html">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#background">Background</a>
+                    <a href="#research">Research</a>
+                    <a href="#projects">Projects</a>
+                     <a href="#research">Projects</a>
+                    <a href="#contact">Contact Us</a>
+                    <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+                </div>
+            </div>
+</nav>
+</header>
+
+
+
+<section class="Home">
+
+
+ <div class="main-container">
+    <div class="Hello">
+          <h1 data-aos="fade-left" data-aos-duration="2000" data-aos-delay="800" >Hello this is </br>  <span class="creative" >Rakshya Sharma </span></h1>
+           <p class="intro-line" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="800">
+  I am a <span id="role" class="animated-role"></span> </p>
+
+         <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+            <a href="https://www.instagram.com/rakshya.sharma7/" ><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/rock.xya.3/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/raksha-nepal-995231387/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/RakshyaSharma8"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+     <div class= "buttons">
+          <button onclick="openContactModal()" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" > Contact Me </button>
+         
+     </div>
+  </div>
+  <div class="image">
+    <img data-aos="fade-left"  data-aos-duration="3000" data-aos-delay="800" src="./images/Untitled design (4).png">
+ </div>
+ </div>
+
+</section>
+
+
+
+
+
+<section  id = "about" class="About">
+  <div class="intro">
+     
+      <div class="paragraph"><h2> About Rakshya Sharma </h2> <p>Motivated, collaborative, and responsible Software Engineer with experience in full-stack development and data management. 
+        I hold a Master of Science degree in Information Technology and a Bachelor's degree in Public Health.
+       I possess experience in building enterprise
+         applications by using Java, Spring Boot, and Microservices.
+          Skilled in developing RESTful APIs.
+          <br>
+          
+      Experienced in Angular, Reactive Forms and Material UI to create interactive and
+           responsive dashboards. Strong knowledge of SQL and NoSQL databases for query optimization and
+            transaction management.  Focus on Agile practices, TDD, and SOLID principles 
+             for high-quality solutions. A collaborative approach is applied to connect backend and frontend 
+             systems so that business goals are delivered effectively.  </p>
+            </div>
+  <img  src="./images/resized.jpg" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="500" >
+</div>
+  
+    </div>
+    
+  </section >
+
+
+  <section id = "background" class="background">
+    <div class="Background-heading">
+      <h1>Background</h1>
+    </div>
+  
+    <div class="background-cards" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700">
+      
+      <!-- Card 1 -->
+      <div class="back">
+        <div class="backimg"><img src="./images/bird.png"></div>
+        <div class="uni"><h2>Washington University</h2></div>
+        <div class="unilist">
+          <p>Master’s of Science in Information Technology<br>(2023–2025)</p>
+        </div>
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="back">
+        <div class="backimg"><img src="./images/pillar.png"></div>
+        <div class="uni"><h2>Pokhara University</h2></div>
+        <div class="unilist">
+          <p>Bachelor’s of Public Health<br>(2015–2019)</p>
+        </div>
+      </div>
+
+      
+  
+      <!-- Card 3 -->
+      <div class="back">
+        <div class="backimg"><img src="./images/setting.png"></div>
+        <div class="uni"><h2>Work Experience</h2></div>
+        <div class="unilist">
+          <p>   Washington University of Sceience and Technology<br> Writing Coach <br>(June 2024– June 2025)
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Card 3 -->
+      <div class="back">
+        <div class="backimg"><img src="./images/setting.png"></div>
+        <div class="uni"><h2>Work Experience</h2></div>
+        <div class="unilist">
+          <p>World Health Organization <br>(Feb 2022– August 2023)</p>
+        </div>
+      </div>
+
+        <!-- Card 3 -->
+      <div class="back">
+        <div class="backimg"><img src="./images/setting.png"></div>
+        <div class="uni"><h2>Work Experience</h2></div>
+        <div class="unilist">
+          <p>SOS Children's Village<br>(March 2021- Feb 2022)</p>
+        </div>
+      </div>
+
+       <!-- Card 3 -->
+      <div class="back">
+        <div class="backimg"><img src="./images/setting.png"></div>
+        <div class="uni"><h2>Work Experience</h2></div>
+        <div class="unilist">
+          <p>National Association of people living with HIV/AIDs in Nepal<br>(Feb 2020- Feb 2021)</p>
+        </div>
+      </div>
+  
+  
+    </div>
+
+    <div class="swiper mySwiper carousel" >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./images/WHO 2.jpg" alt="WHO 2" /></div>
+        <div class="swiper-slide"><img src="./images/1688025645326.jpeg" alt="WHO 2" /></div>
+        <div class="swiper-slide"><img src="./images/who 1.jpg" alt="WHO 1" /></div>
+        <div class="swiper-slide"><img src="./images/wust 2.jpg" alt="WUST 2" /></div>
+        <div class="swiper-slide"><img src="./images/wust 3.jpg" alt="WUST 3" /></div>
+        <div class="swiper-slide"><img src="./images/wust 4.jpg" alt="WUST 4" /></div>
+        <div class="swiper-slide"><img src="./images/FPAN 2.png" alt="FPAN 2" /></div>
+        <div class="swiper-slide"><img src="./images/FPAN.jpeg" alt="FPAN" /></div>
+        <div class="swiper-slide"><img src="./images/NAPN 1.jpg" alt="NAPN 1" /></div>
+        <div class="swiper-slide"><img src="./images/Clz.png" alt="NAPN 1" /></div>
+        <div class="swiper-slide"><img src="./images/IMG_20200913_124409.jpg" alt="NAPN 1" /></div>
+        <div class="swiper-slide"><img src="./images/IMG_20200914_125159.jpg" alt="NAPN 1" /></div>
+        <div class="swiper-slide"><img src="./images/IMG_20201001_154958.jpg" /></div>
+        <div class="swiper-slide"><img src="./images/Quiz FPAN.png" alt="Quiz" /></div>
+        <div class="swiper-slide"><img src="./images/WHO 5.jpg" alt="Quiz" /></div>
+      </div>
+    </div>
+    
+  </section>
+
+
+  <!----projects---> 
+
+   <section id="projects" class="projects">
+
+<div>
+  <h1>Projects</h1>
+</div>
+
+<div class="card-container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700">
+  <!-- Fitch Ratings -->
+  <div class="card" onclick="openModal('whoModal')">
+    <img src="./images/WHO 2 - Copy.jpg" alt="Fitch Ratings">
+    <h3>Emergency Care System Strengthening Project </h3>
+    <button class="know-more">Know More »</button>
+  </div>
+
+  <!-- Carta -->
+  <div class="card" onclick="openModal('napnModal')">
+    <img src="./images/NAPN 1.jpg" alt="Carta">
+    <h3>HIV/TB project for migrants and their spouses</h3>
+    <button class="know-more">Know More »</button>
+  </div>
+
+
+ <!-- ResumeBuilder -->
+  <div class="card" onclick="openModal('ResumeModal')">
+    <img src="./images/Resume picture.png" alt="Lowe's">
+    <h3>Resume Builder</h3>
+    <button class="know-more">Know More »</button>
+  </div>
+
+
+
+<!-- BMI Calculator -->
+<a href="./BMI/index.html" class="card" style="text-decoration:none; color:inherit;">
+  <img src="./images/BMI.webp" alt="BMI Calculator">
+  <h3>BMI Calculator</h3>
+  <button class="know-more">Know More »</button>
+</a>
+
+
+<a href="./FoodCalorieCalc/index.html" class="card" style="text-decoration:none; color:inherit;">
+  <img src="./images/Calorie-Counting-App.avif" alt="Calorie Calculator">
+  <h3>Calorie Calculator</h3>
+  <button class="know-more">Know More »</button>
+</a>
+</div>
+</div>
+
+
+
+<!-- WHO Modal -->
+<div id="whoModal" class="modal"> 
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('whoModal')">&times;</span>
+
+    <div class="modal-body">
+      <!-- Left Section -->
+      <div class="modal-left">
+        <p>The WHO Emergency Care System project supported Pokhara Academy of Health Sciences Hospital in implementing international emergency norms and standards. The work improved data accuracy, reporting, and preparedness monitoring across clinical departments.</p>
+        
+        <h4>Key Responsibilities:</h4>
+        <ul>
+          <li>Supported implementation of WHO emergency care standards per International Health Regulations.</li>
+          <li>Monitored hospital health data, validated records, and ensured accurate HMIS submissions.</li>
+          <li>Led systematic follow-ups on patient health status and documented updates for hospital records.</li>
+          <li>Organized stakeholder meetings, maintained official records, and coordinated surveillance activities.</li>
+          <li>Developed and maintained data collection schedules for paramedics, nurses, and collectors.</li>
+        </ul>
+      </div>
+
+      <!-- Right Section -->
+      <div class="modal-right">
+        <h4>Skills & Tools Used:</h4>
+        <div class="skill"><span>SPSS</span><div class="bar"><div class="progress" data-width="70%"></div></div></div>
+        <div class="skill"><span>Excel</span><div class="bar"><div class="progress" data-width="50%"></div></div></div>
+        <div class="skill"><span>HMIS</span><div class="bar"><div class="progress" data-width="90%"></div></div></div>
+        <div class="skill"><span>DHIS</span><div class="bar"><div class="progress" data-width="90%"></div></div></div>
+        <div class="skill"><span>SORMAS</span><div class="bar"><div class="progress" data-width="50%"></div></div></div>
+        <img src="./images/WHO_logo.svg.png" alt="WHO Logo" class="client-logo">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAP+N Modal -->
+<div id="napnModal" class="modal"> 
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('napnModal')">&times;</span>
+
+    <div class="modal-body">
+      <!-- Left Section -->
+      <div class="modal-left">
+        <p>The HIV/AIDS Monitoring and Evaluation Program in Syangja District aimed to strengthen data-driven public health interventions. The project enhanced program ,screening for HIV/AIDs , Tuberculosis, and community outreach initiatives.</p>
+        
+        <h4>Key Responsibilities:</h4>
+        <ul>
+          <li>Prepared cluster-wise targets and tracked progress with in-reach workers and Save the Children.</li>
+          <li>Analyzed program data and shared performance reports with leadership and donors.</li>
+          <li>Reviewed monitoring tools, forms, and registers for program data accuracy.</li>
+          <li>Oriented field staff and volunteers on HIV/AIDS, TB testing, and counseling.</li>
+          <li>Organized mobile health camps and supervised timely completion of outreach programs.</li>
+        </ul>
+      </div>
+
+      <!-- Right Section -->
+      <div class="modal-right">
+        <h4>Skills & Tools Used:</h4>
+        <div class="skill"><span>Data Analysis</span><div class="bar"><div class="progress" data-width="85%"></div></div></div>
+        <div class="skill"><span>Monitoring & Evaluation</span><div class="bar"><div class="progress" data-width="90%"></div></div></div>
+        <div class="skill"><span>HMIS / IHMIS</span><div class="bar"><div class="progress" data-width="88%"></div></div></div>
+        <div class="skill"><span>Report Writing</span><div class="bar"><div class="progress" data-width="80%"></div></div></div>
+        <div class="skill"><span>Stakeholder Coordination</span><div class="bar"><div class="progress" data-width="75%"></div></div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ATS Resume Builder Modal -->
+<div id="ResumeModal" class="modal"> 
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('ResumeModal')">&times;</span>
+
+    <div class="modal-body">
+      <!-- Left Section -->
+      <div class="modal-left">
+        <h3>ATS Resume Builder <span class="role">– Personal Project</span></h3>
+        <p>
+          The ATS Resume Builder is a browser-based web application designed to help users create recruiter-ready resumes
+          that are fully compatible with Applicant Tracking Systems (ATS). The platform allows users to input, preview,
+          and export resumes in DOCX  format through a clean, interactive interface.
+        </p>
+
+        <ul>
+          <li>Developed a dynamic multi-tab resume builder interface using HTML, CSS, and JavaScript for a step-by-step guided workflow.</li>
+          <li>Integrated <code>html2pdf.js</code>, <code>docx.js</code>, and <code>html2canvas</code> to enable live PDF and DOCX exports directly from the browser.</li>
+          <li>Implemented responsive layouts using CSS Flexbox and Grid for seamless usability across devices.</li>
+          <li>Added a live preview section that updates in real time as users fill in form data.</li>
+          <li>Used Local Storage APIs for saving progress, allowing users to resume editing without losing data.</li>
+          <li>Applied DOM manipulation, event handling, and input validation to improve interactivity and data accuracy.</li>
+        </ul>
+      </div>
+
+      <!-- Right Section -->
+      <div class="modal-right">
+        <h4>Skills & Tools Used:</h4>
+        <div class="skill"><span>HTML5 / CSS3</span><div class="bar"><div class="progress" data-width="95%"></div></div></div>
+        <div class="skill"><span>JavaScript (ES6)</span><div class="bar"><div class="progress" data-width="93%"></div></div></div>
+        <div class="skill"><span>DOM Manipulation</span><div class="bar"><div class="progress" data-width="90%"></div></div></div>
+        <div class="skill"><span>Responsive Design</span><div class="bar"><div class="progress" data-width="85%"></div></div></div>
+        <div class="skill"><span>Local Storage / Validation</span><div class="bar"><div class="progress" data-width="80%"></div></div></div>
+        <img src="./images/Resume picture.png" alt="Resume Builder Logo" class="client-logo">
+
+         <!-- Live Project Button -->
+        <a href="https://www.freeresumedeveloper.com/" target="_blank" class="live-btn">View Live Project</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+ 
+    </section>
+
+
+
+<!--Research Section-->
+
+<section id="research">
+
+  <div class="research"> 
+  <div class="heading"><h1>Research Publication</h1></div>
+  <div class="publications" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700"> 
+
+    <!-- Card 1 -->
+    <div class="violence">
+      <img src="./images/Violence AI.webp" alt="Violence Study">
+      <div class="Topic">
+        <p>Intimate partner violence during pregnancy among married women in Putalibajar municipality, Nepal</p>
+        <a href="https://doi.org/10.3389/fpsyg.2023.1158406">Intimate Partner Violence</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="meat">
+      <img src="./images/chicken coop.webp" alt="Meat Study">
+      <div class="Topic">
+        <p>Study of meat hygiene practices among meat retailers in Pokhara metropolitan city.</p>
+        <a href="https://www.alliedacademies.org/articles/study-of-meat-hygiene-practices-among-the-meat-retailers-in-pokhara-metropolitan-city-22232.html">Meat Hygiene Practices Article</a>
+      </div>
+    </div>
+
+     <!-- Card 3 -->
+    <div class="meat">
+      <img src="./images/AI-text-to-image-photo-robot-with-computer.webp" alt="Meat Study">
+      <div class="Topic">
+        <p>Artificial Intelligence-Guided Machine Learning Frameworks for Zero-Shot Decision Making in Autonomous Systems.
+        </p>
+        <a href="https://www.jisem-journal.com/index.php/journal/article/view/11871?fbclid=IwY2xjawN2G3FleHRuA2FlbQIxMABicmlkETFoUWdXRzdqbDlDQTdUcmNYAR6nLA4YpZE6rHNXabBXEndTyb1w-_uv9DX09krJPkcS6HhzoH-KY5X9J64sSg_aem_SCauYGXQz3Mk25_M5PBfuQ">AI & Guided Machine Learning</a>
+      </div>
+    </div>
+
+     <!-- Card 4 -->
+    <div class="meat">
+      <img src="./images/AI.jpg" alt="Meat Study">
+      <div class="Topic">
+        <p>Artificial Intelligence-Augmented Machine Learning for Autonomous Scientific Discovery in Interdisciplinary Research
+        </p>
+        <a href="https://ijritcc.org/index.../ijritcc/article/view/11676/8935">AI for Autonomous Scientific Discovery</a>
+      </div>
+    </div>
+
+    <div class="meat">
+      <img src="./images/postpartum Depression.webp" alt="Meat Study">
+      <div class="Topic">
+        <p></p>
+          Prevalence and associated factors of postpartum
+depression among women in putalibajar municipality. 
+        </p>
+        <a href="https://doi.org/10.3126/jpan.v14i2.86050">Postpartum Depression</a>
+      </div>
+    </div>
+
+       <!-- Card 5 -->
+  
+
+
+
+  </div>
+</div>
+
+</section>
+
+
+  <!----Skills---> 
+<section id ="skills" class="skills">
+  <h2>Skills & Technologies</h2>
+  
+
+  <div class="skills-grid">
+    <div class="skill-card">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="55" height="60" fill="rgb(155,72,25)">
+    <path d="M15.1 36.9s-2.2 1.3 1.5 1.8c4.3.6 6.4.5 11.1-.5 0 0 1.3.8 3.1 1.5-11.2 4.8-25.3-.3-15.7-2.8zM13.4 29.6s-2.5 1.8 1.3 2.2c4.7.5 8.3.6 14.6-.7 0 0 .9.9 2.4 1.3-13.9 4.1-29.4.3-18.3-2.8zM26.2 22.4c2.7 3.1-.7 5.9-.7 5.9s6.8-3.5 3.7-8c-2.9-4.1-5.1-6.1 6.9-13.1 0 0-18.8 4.7-9.9 15.2zM37.9 39.4c.2-.2.3-.4.5-.6-1.9.4-4.7.8-7.9 1-4.8.4-10.8.4-17.5-.3 5.1 2 20.1 3.2 24.9-.1zM30.8 31.7c-1.6.4-2.4.8-2.4.8s.6-.9 1.7-1.1c5.1-1.1 8.6-3.6 8.6-3.6s-2.3 2.5-7.9 3.9zM35.1 43.1s1.6 1.3-1.7 2.3c-6.2 1.9-25.6 2.5-31 .1-1.9-.8 1.7-2 2.9-2.3 1.2-.3 1.9-.2 1.9-.2-2.2-1.6-14.1 3-6 4.3 21.9 3.6 39.9-1.6 33.9-4.2z"/>
+  </svg>
+  <span>Java</span>
+</div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/springboot.svg"><span>Spring Boot</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spring.svg"><span>Spring MVC</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/springsecurity.svg"><span>Spring Security</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spring.svg"><span>AOP</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apachetomcat.svg"><span>JSP</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/hibernate.svg"><span>JPA / Hibernate</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/jsonwebtokens.svg"><span>JWT</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apachekafka.svg"><span>Apache Kafka</span></div>
+<!-- FRONTEND -->
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/angular.svg"><span>Angular</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg"><span>JavaScript</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg"><span>HTML5</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/css3.svg"><span>CSS3</span></div>
+<div class="skill-card">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/ibm.svg" alt="SPSS">
+  <span>SPSS</span>
+</div>
+<div class="skill-card">
+  <svg viewBox="0 0 24 24" width="45" height="45" fill="rgb(155,72,25)"><path d="M3 7h8v2H3zm0 4h8v2H3zm0 4h8v2H3zM14 7h7v10h-7v-2h5V9h-5z"/></svg>
+  <span>REST APIs</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postman.svg"><span>Postman</span></div>
+
+
+<!-- DATABASES -->
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg"><span>MySQL</span></div>
+
+
+
+<!-- DEVOPS -->
+
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg"><span>Git</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"><span>GitHub</span></div>
+<div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazonaws.svg"><span>AWS</span></div>
+<div class="skill-card">
+  <svg viewBox="0 0 24 24" width="45" height="45" fill="rgb(155,72,25)"><path d="M4 4h16v4H4zM4 10h10v4H4zM4 16h7v4H4z"/></svg>
+  <span>Agile</span>
+</div>
+<div class="skill-card">
+  <svg viewBox="0 0 24 24" width="45" height="45" fill="rgb(155,72,25)">
+    <path d="M12 2a10 10 0 100 20 8 8 0 110-16 2 2 0 012 2H9a5 5 0 105 5V9h2v3a7 7 0 11-7-7h3a3 3 0 10-3 3h6"/>
+  </svg>
+  <span>Scrum</span>
+</div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section id="contact">
+
+
+
+  <div class="reach"> 
+    <div class="S2">
+      <div class="saying">
+        <p> Reach out if you want to create impactful visual art together </p>
+        <hr> 
+      </div>
+      <div class="socials">
+        <p> To see more of my work, visit my Socials</p> 
+
+        <div class="social-links2" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="500">
+          <a href="https://www.instagram.com/rakshya.sharma7/" ><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/rock.xya.3/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/rakshya-sharma/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/RakshyaSharma8"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <div class="Contact"> 
+        <p> Phone: +9198xxxxxxxx </p>
+        <p></p> Email: sharmarakshya7@gmail.com</p> 
+      </div>
+    </div>
+  </div>
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeContactModal()">&times;</span>
+      <h2>Contact Me</h2>
+      <form onsubmit="sendEmail(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  </div>
+  
+
+</section>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({ offset: 0 });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+
+</body>
+</html>
+
+<script>
+
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,                     // 🔁 Enables infinite scroll
+    speed: 3000,                    // ⏱️ Controls speed of slide transition
+    autoplay: {
+      delay: 0,                     // 🚀 No delay between transitions
+      disableOnInteraction: false, // Keep autoplay after user interaction
+    },
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    freeMode: true,                 // 🆓 Smooth scrolling effect
+    freeModeMomentum: false,       // 🔁 Continuous no-stop scroll
+  });
+
+
+</script>
+</body>
+</html>

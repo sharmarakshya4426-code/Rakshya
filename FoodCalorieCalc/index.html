@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Tracker Pro</title>
+    <style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; /* 1rem = 16px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f6f6f9;
+  min-height: 100vh;
+  padding: 1.25rem;
+  color: #2c2c34;
+  line-height: 1.6;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 75rem; /* 1200px */
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 1.125rem;
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* HEADER */
+.header {
+  background: #362b55;
+  color: #fff;
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* SEARCH SECTION */
+.search-section {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
+  border-top: 0.3rem solid #362b55;
+}
+
+.search-section h2 {
+  color: #362b55;
+  margin-bottom: 1.25rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 0.125rem solid #e0e0e0;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #362b55;
+}
+
+.food-results {
+  max-height: 18.75rem; /* 300px */
+  overflow-y: auto;
+  border: 0.063rem solid #eee;
+  border-radius: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.food-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 0.063rem solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-item:hover {
+  background-color: #f5f1ff;
+}
+
+.food-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.food-calories {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ADD SECTION */
+.add-section {
+  display: none;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background: #f9f8fc;
+  border-radius: 0.625rem;
+  border-left: 0.25rem solid #362b55;
+}
+
+.quantity-input {
+  width: 6rem;
+  padding: 0.6rem;
+  border: 0.125rem solid #e0e0e0;
+  border-radius: 0.375rem;
+  margin: 0 0.625rem;
+  font-size: 1rem;
+}
+
+.meal-selector select {
+  padding: 0.6rem;
+  border: 0.125rem solid #e0e0e0;
+  border-radius: 0.375rem;
+  font-size: 0.9rem;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: #362b55;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #2d2448;
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.313rem 0.75rem rgba(54, 43, 85, 0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ff4e50 0%, #ff914d 100%);
+  color: white;
+}
+
+/* MEALS SECTION */
+.meals-section {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
+  border-top: 0.3rem solid #362b55;
+}
+
+.meal-category {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  border-left: 0.3rem solid #362b55;
+  background: #faf9ff;
+}
+
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.meal-header h3 {
+  font-size: 1.2rem;
+  color: #362b55;
+  font-weight: 600;
+}
+
+.meal-calories {
+  font-weight: 600;
+  color: #362b55;
+}
+
+/* SUMMARY SECTION */
+.summary-section {
+  grid-column: 1 / -1;
+  background: #362b55;
+  color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.summary-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  backdrop-filter: blur(0.625rem);
+}
+
+.summary-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+/* CALORIES BURNED SECTION */
+.calories-burned-section {
+  grid-column: 1 / -1;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+  border-top: 0.3rem solid #362b55;
+}
+
+.calories-burned-input {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  html {
+    font-size: 93.75%; /* 15px */
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%; /* 14px */
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  .header {
+    padding: 2rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .main-content {
+    padding: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  input,
+  select {
+    width: 100%;
+  }
+
+  .summary-item h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 81.25%; /* 13px */
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .meal-header h3 {
+    font-size: 1rem;
+  }
+}
+
+ 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Calorie Tracker </h1>
+            <p>Track your daily nutrition and reach your fitness goals</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="search-section">
+                <h2>🔍 Food Search</h2>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search for food items..." onkeyup="searchFood()">
+                <div class="food-results" id="foodResults"></div>
+                
+                <div class="add-section" id="addSection">
+                    <h4>Add to Meal</h4>
+                    <div>
+                        <span>Selected: </span>
+                        <strong id="selectedFood"></strong>
+                        <span id="selectedCalories"></span>
+                    </div>
+                    <div style="margin: 15px 0;">
+                        <label>Quantity (grams): </label>
+                        <input type="number" class="quantity-input" id="quantityInput" value="100" min="1">
+                        <span>Total Calories: <strong id="totalCalories">0</strong></span>
+                    </div>
+                    <div class="meal-selector">
+                        <label>Add to: </label>
+                        <select id="mealSelect">
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="addToMeal()">Add to Meal</button>
+                </div>
+            </div>
+            
+            <div class="meals-section">
+                <h2>🍽️ Today's Meals</h2>
+                
+                <div class="meal-category breakfast">
+                    <div class="meal-header">
+                        <h3>🌅 Breakfast</h3>
+                        <span class="meal-calories" id="breakfastCalories">0 cal</span>
+                    </div>
+                    <div id="breakfastItems"></div>
+                </div>
+                
+                <div class="meal-category lunch">
+                    <div class="meal-header">
+                        <h3>☀️ Lunch</h3>
+                        <span class="meal-calories" id="lunchCalories">0 cal</span>
+                    </div>
+                    <div id="lunchItems"></div>
+                </div>
+                
+                <div class="meal-category dinner">
+                    <div class="meal-header">
+                        <h3>🌙 Dinner</h3>
+                        <span class="meal-calories" id="dinnerCalories">0 cal</span>
+                    </div>
+                    <div id="dinnerItems"></div>
+                </div>
+            </div>
+            
+            <div class="calories-burned-section">
+                <h2>🔥 Calories Burned</h2>
+                <p>Track your daily calorie burn from exercise and activities</p>
+                <div class="calories-burned-input">
+                    <input type="number" class="search-input" id="caloriesBurnedInput" placeholder="Enter calories burned" min="0" style="width: 200px;">
+                    <button class="btn btn-primary" onclick="addCaloriesBurned()">Add Calories Burned</button>
+                </div>
+                <div style="margin-top: 15px;">
+                    <strong>Total Burned Today: <span id="totalBurned">0</span> calories</strong>
+                </div>
+            </div>
+            
+            <div class="summary-section">
+                <h2>📊 Daily Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h3 id="totalConsumed">0</h3>
+                        <p>Calories Consumed</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3 id="totalBurnedSummary">0</h3>
+                        <p>Calories Burned</p>
+                    </div>
+                    <div class="summary-item">
+                        <h3 id="netCalories">0</h3>
+                        <p>Net Calories</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Comprehensive food database with calories per 100g
+        const foodDatabase = [
+            // Fruits
+            { name: "Apple", calories: 52 },
+            { name: "Banana", calories: 89 },
+            { name: "Orange", calories: 47 },
+            { name: "Strawberry", calories: 32 },
+            { name: "Grapes", calories: 62 },
+            { name: "Mango", calories: 60 },
+            { name: "Pineapple", calories: 50 },
+            { name: "Watermelon", calories: 30 },
+            { name: "Peach", calories: 39 },
+            { name: "Pear", calories: 57 },
+            
+            // Vegetables
+            { name: "Broccoli", calories: 34 },
+            { name: "Carrot", calories: 41 },
+            { name: "Spinach", calories: 23 },
+            { name: "Tomato", calories: 18 },
+            { name: "Cucumber", calories: 16 },
+            { name: "Bell Pepper", calories: 31 },
+            { name: "Onion", calories: 40 },
+            { name: "Potato", calories: 77 },
+            { name: "Sweet Potato", calories: 86 },
+            { name: "Lettuce", calories: 15 },
+            
+            // Grains & Cereals
+            { name: "Rice (cooked)", calories: 130 },
+            { name: "Bread (white)", calories: 265 },
+            { name: "Pasta (cooked)", calories: 131 },
+            { name: "Oatmeal", calories: 68 },
+            { name: "Quinoa (cooked)", calories: 120 },
+            { name: "Wheat Flour", calories: 364 },
+            
+            // Proteins
+            { name: "Chicken Breast", calories: 165 },
+            { name: "Beef Steak", calories: 271 },
+            { name: "Salmon", calories: 208 },
+            { name: "Tuna", calories: 144 },
+            { name: "Eggs", calories: 155 },
+            { name: "Tofu", calories: 76 },
+            { name: "Pork", calories: 242 },
+            { name: "Turkey", calories: 135 },
+            
+            // Dairy
+            { name: "Milk (whole)", calories: 61 },
+            { name: "Cheese (cheddar)", calories: 402 },
+            { name: "Yogurt (plain)", calories: 59 },
+            { name: "Butter", calories: 717 },
+            { name: "Ice Cream", calories: 207 },
+            
+            // Ready-made/Fast Food
+            { name: "Pizza (cheese)", calories: 266 },
+            { name: "Hamburger", calories: 295 },
+            { name: "French Fries", calories: 365 },
+            { name: "Hot Dog", calories: 290 },
+            { name: "Sandwich (turkey)", calories: 200 },
+            { name: "Burrito", calories: 206 },
+            { name: "Fried Chicken", calories: 320 },
+            
+            // Snacks & Others
+            { name: "Almonds", calories: 579 },
+            { name: "Peanuts", calories: 567 },
+            { name: "Chocolate", calories: 546 },
+            { name: "Cookies", calories: 502 },
+            { name: "Chips", calories: 536 },
+            { name: "Honey", calories: 304 },
+            { name: "Olive Oil", calories: 884 },
+            { name: "Avocado", calories: 160 }
+        ];
+        
+        // Meal storage
+        let meals = {
+            breakfast: [],
+            lunch: [],
+            dinner: []
+        };
+        
+        let selectedFood = null;
+        let totalCaloriesBurned = 0;
+        
+        // Search functionality
+        function searchFood() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const results = document.getElementById('foodResults');
+            
+            if (query.length < 2) {
+                results.innerHTML = '';
+                return;
+            }
+            
+            const filteredFoods = foodDatabase.filter(food => 
+                food.name.toLowerCase().includes(query)
+            );
+            
+            results.innerHTML = filteredFoods.map(food => `
+                <div class="food-item" onclick="selectFood('${food.name}', ${food.calories})">
+                    <span class="food-name">${food.name}</span>
+                    <span class="food-calories">${food.calories} cal/100g</span>
+                </div>
+            `).join('');
+        }
+        
+        // Select food item
+        function selectFood(name, calories) {
+            selectedFood = { name, calories };
+            document.getElementById('selectedFood').textContent = name;
+            document.getElementById('selectedCalories').textContent = `(${calories} cal/100g)`;
+            document.getElementById('addSection').style.display = 'block';
+            calculateTotalCalories();
+        }
+        
+        // Calculate total calories based on quantity
+        function calculateTotalCalories() {
+            const quantity = parseInt(document.getElementById('quantityInput').value) || 100;
+            if (selectedFood) {
+                const total = Math.round((selectedFood.calories * quantity) / 100);
+                document.getElementById('totalCalories').textContent = total;
+            }
+        }
+        
+        // Add food to meal
+        function addToMeal() {
+            if (!selectedFood) return;
+            
+            const quantity = parseInt(document.getElementById('quantityInput').value) || 100;
+            const mealType = document.getElementById('mealSelect').value;
+            const totalCalories = Math.round((selectedFood.calories * quantity) / 100);
+            
+            const mealItem = {
+                name: selectedFood.name,
+                quantity: quantity,
+                calories: totalCalories
+            };
+            
+            meals[mealType].push(mealItem);
+            updateMealDisplay(mealType);
+            updateSummary();
+            
+            // Reset
+            document.getElementById('addSection').style.display = 'none';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('foodResults').innerHTML = '';
+            selectedFood = null;
+        }
+        
+        // Update meal display
+        function updateMealDisplay(mealType) {
+            const container = document.getElementById(`${mealType}Items`);
+            const mealItems = meals[mealType];
+            
+            container.innerHTML = mealItems.map((item, index) => `
+                <div class="meal-item">
+                    <span>${item.name} (${item.quantity}g)</span>
+                    <span>
+                        ${item.calories} cal
+                        <button class="btn btn-danger" style="margin-left: 10px; padding: 5px 10px;" onclick="removeMealItem('${mealType}', ${index})">Remove</button>
+                    </span>
+                </div>
+            `).join('');
+            
+            // Update meal total
+            const totalCalories = mealItems.reduce((sum, item) => sum + item.calories, 0);
+            document.getElementById(`${mealType}Calories`).textContent = `${totalCalories} cal`;
+        }
+        
+        // Remove meal item
+        function removeMealItem(mealType, index) {
+            meals[mealType].splice(index, 1);
+            updateMealDisplay(mealType);
+            updateSummary();
+        }
+        
+        // Add calories burned
+        function addCaloriesBurned() {
+            const burned = parseInt(document.getElementById('caloriesBurnedInput').value) || 0;
+            if (burned > 0) {
+                totalCaloriesBurned += burned;
+                document.getElementById('totalBurned').textContent = totalCaloriesBurned;
+                document.getElementById('caloriesBurnedInput').value = '';
+                updateSummary();
+            }
+        }
+        
+        // Update summary
+        function updateSummary() {
+            const totalConsumed = Object.values(meals).flat().reduce((sum, item) => sum + item.calories, 0);
+            const netCalories = totalConsumed - totalCaloriesBurned;
+            
+            document.getElementById('totalConsumed').textContent = totalConsumed;
+            document.getElementById('totalBurnedSummary').textContent = totalCaloriesBurned;
+            document.getElementById('netCalories').textContent = netCalories;
+            
+            // Color code net calories
+            const netElement = document.getElementById('netCalories');
+            if (netCalories > 0) {
+                netElement.style.color = '#ff6b6b';
+            } else if (netCalories < 0) {
+                netElement.style.color = '#4ecdc4';
+            } else {
+                netElement.style.color = 'white';
+            }
+        }
+        
+        // Event listeners
+        document.getElementById('quantityInput').addEventListener('input', calculateTotalCalories);
+        
+        // Initialize display
+        updateSummary();
+    </script>
+</body>
+</html>
