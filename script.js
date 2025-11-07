@@ -8,7 +8,45 @@ function cancel(){
     navbar.style.transform = "translateY(-500px)"
 }
 
+
+/* I am developer line in home page */
+  const roles = ["Software Developer", "Public Health Professional"];
+let roleIndex = 0;
+let charIndex = 0;
+let typing = true;
+const roleElement = document.getElementById("role");
+
+function typeWriter() {
+  const currentRole = roles[roleIndex];
+  if (typing) {
+    if (charIndex < currentRole.length) {
+      roleElement.textContent += currentRole.charAt(charIndex++);
+      setTimeout(typeWriter, 100);
+    } else {
+      typing = false;
+      setTimeout(typeWriter, 1500);
+    }
+  } else {
+    if (charIndex > 0) {
+      roleElement.textContent = currentRole.substring(0, --charIndex);
+      setTimeout(typeWriter, 50);
+    } else {
+      typing = true;
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(typeWriter, 300);
+    }
+  }
+}
+
+typeWriter();
+
+
+
+
+
+
 /* Hire button for conatct me block */
+
 
 function openContactModal() {
     document.getElementById("contactModal").style.display = "block";
@@ -33,3 +71,49 @@ function openContactModal() {
     closeContactModal();
   };
 
+
+
+  
+//Projects
+
+function openModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.display = "block";
+
+  // animate bars
+  modal.querySelectorAll(".progress").forEach(bar => {
+    const width = bar.dataset.width;
+    bar.style.width = "0";
+    setTimeout(() => (bar.style.width = width), 150);
+  });
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.display = "none";
+  modal.querySelectorAll(".progress").forEach(bar => (bar.style.width = "0"));
+}
+
+window.onclick = function(e) {
+  document.querySelectorAll(".modal").forEach(modal => {
+    if (e.target === modal) closeModal(modal.id);
+  });
+};
+
+//Skills
+
+
+
+  const skillCards = document.querySelectorAll('.skill-card');
+
+  function revealSkills() {
+    skillCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        card.classList.add('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealSkills);
+  window.addEventListener('load', revealSkills);
