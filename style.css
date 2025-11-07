@@ -502,14 +502,13 @@ button[type="submit"]:hover {
     flex-direction: column;
     justify-content: center;
     gap: 3rem;
-    margin-bottom: 3rem;
-     min-height:90vh;
+    margin-bottom: 2rem;
 }
   
 
   .projects h1 {
     margin-bottom: 20px;
-    font-size: clamp(2rem, 4vw, 5rem);
+    font-size: clamp(2.2rem, 4vw, 5rem);
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     font-weight: bold;
@@ -525,12 +524,10 @@ button[type="submit"]:hover {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-
   gap: 5rem;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  max-width: 1300px;
+  max-width: 1200px;
 }
 
 .card {
@@ -554,7 +551,7 @@ button[type="submit"]:hover {
 
 .card h3 {
   margin: 1rem 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: #333;
 }
 
@@ -1240,4 +1237,5 @@ color: rgb(155,72,25);
     width: 60%;
   }
 }
+
 }
